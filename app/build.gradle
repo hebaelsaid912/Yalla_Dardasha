@@ -1,0 +1,86 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.example.android.final_graduation_project"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+   // implementation files('C:\\Users\\SOFT\\Downloads\\libwebrtc_19324.aar')
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    //pinview
+    implementation 'io.github.chaosleung:pinview:1.4.4'
+    //country code picker flag
+    implementation 'com.hbb20:ccp:2.5.3'
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:2.3.1"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:2.3.1"
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0-alpha02'
+    //indicator
+    implementation 'me.relex:circleindicator:2.1.6'
+    //lottie
+   // implementation 'com.airbnb.android:lottie:3.7.0'
+    //retrofit2
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+    //rxjava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.21'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+    //sliding-root-nav
+    implementation "com.yarolegovich:sliding-root-nav:1.1.1"
+    //shimmer effect
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    //picasso to load image from URI
+    //implementation 'com.squareup.picasso:picasso:2.71828'
+    //glide to load image from URI
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //socket.io
+    implementation ('io.socket:socket.io-client:2.0.1') {
+        exclude group: 'org.json', module: 'json'
+    }
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.7'
+    // web rtc
+    implementation 'org.webrtc:google-webrtc:1.0.32006'
+    //gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
+
+
+
+}

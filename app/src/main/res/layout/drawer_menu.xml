@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/drawer_list"
+        android:layout_width="250dp"
+        android:layout_height="0dp"
+        android:paddingRight="20dp"
+        android:layout_weight="1"/>
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="160dp"/>
+
+
+</LinearLayout>

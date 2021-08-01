@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.splash_screen.fragments.DetailsFragment_1"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        tools:context=".ui.splash_screen.SplashActivity">
+
+
+        <ImageView
+            android:id="@+id/logoText"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:elevation="20dp"
+            android:transitionName="toDown"
+            android:textColor="@color/color_1"
+            android:textSize="100sp"
+            android:textStyle="bold"
+            android:src="@drawable/app_icon_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/club"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yalla Dardasha"
+            android:elevation="10dp"
+            android:transitionName="toDown"
+            android:textColor="@color/color_1"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/logoText"
+            app:layout_constraintStart_toStartOf="@+id/logoText"
+            app:layout_constraintTop_toBottomOf="@+id/logoText" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

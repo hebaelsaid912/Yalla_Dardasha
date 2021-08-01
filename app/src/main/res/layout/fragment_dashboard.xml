@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.fragments.rooms.getRooms.DashboardFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/refreshGetRooms"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/searchEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="@drawable/search_background"
+                        android:elevation="4dp"
+                        android:hint="Search"
+                        android:paddingStart="8dp"
+                        android:paddingTop="5dp"
+                        android:paddingEnd="250dp"
+                        android:paddingBottom="5dp"
+                        android:textSize="15sp"
+                        android:editable="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/shimmerEffect_rooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/searchEditText">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+
+                            <include layout="@layout/shimmereffect_rooms_rv" />
+                        </LinearLayout>
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/getRooms_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="70dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:listitem="@layout/rooms_list_items" />
+                    <!-- Empty view for the list -->
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/empty_view_rooms"
+                        android:layout_width="0dp"
+                        android:layout_height="203dp"
+                        android:layout_centerInParent="true"
+                        android:elevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/getRooms_rv"
+                        app:layout_constraintEnd_toEndOf="@+id/getRooms_rv"
+                        app:layout_constraintStart_toStartOf="@+id/getRooms_rv"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/empty_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/hourglass"
+                            app:layout_constraintEnd_toEndOf="@+id/empty_view_rooms"
+                            app:layout_constraintStart_toStartOf="@+id/empty_view_rooms"
+                            app:layout_constraintTop_toTopOf="@+id/empty_view_rooms" />
+
+                        <TextView
+                            android:id="@+id/empty_title_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/empty_img"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="sans-serif-medium"
+                            android:paddingTop="30dp"
+                            android:text="There is no rooms yet"
+                            android:textAppearance="?android:textAppearanceMedium"
+                            android:textColor="@color/purple_500"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@+id/empty_img"
+                            app:layout_constraintStart_toStartOf="@+id/empty_img"
+                            app:layout_constraintTop_toBottomOf="@+id/empty_img" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/createNewRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/white"
+                android:src="@drawable/plus"
+                android:tint="@color/color_1" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </FrameLayout>
+</layout>
